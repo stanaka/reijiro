@@ -25,3 +25,20 @@
 .highlight {
     color: #ff2244;
 }
+
+@media screen and (max-width: 768px) {
+  .btn-autosize {
+    padding: 5px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .btn-autosize {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 6px;
+  }
+}
