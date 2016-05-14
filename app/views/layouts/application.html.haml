@@ -5,13 +5,20 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
+    %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1" }
   %body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          %a.brand{:href => "/"} Reijiro
-          %ul.nav
-            %li
+    %nav.navbar.navbar-default{role: "navigation"}
+      .container
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "/"} Reijiro
+        .collapse.navbar-collapse.navbar-ex1-collapse
+          %ul.nav.navbar-nav
+            %li.active
               = link_to "Next (#{Clip.overdue_count})", next_path
             %li
               = link_to "Clips (#{Clip.undone.count}/#{Clip.count})", clips_path
@@ -21,10 +28,10 @@
               = link_to "Stats", stats_path
             %li
               = link_to "Done today: #{Check.today.count}"
-          %ul.nav.pull-right
-            %li
-              %form.navbar-search{action: '/search/', method: 'get'}
-                %input.search-query{id: 'query', name: 'query', type: 'text', placeholder: 'Search'}
+          %form.navbar-form.navbar-left{role: "search", action: '/search/', method: 'get'}
+            .form-group
+              %input.form-control{id: 'query', placeholder: "Search", name: 'query', type: "text"}/
+              / %button.btn.btn-default{type: "submit"} Submit
 
     .container
       =render :partial => "shared/flash_messages", :locals => {:flash => flash}

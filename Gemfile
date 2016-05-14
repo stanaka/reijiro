@@ -15,6 +15,7 @@ gem 'jquery-rails'
 gem 'capistrano'
 gem 'rvm-capistrano', require: false
 gem 'bootstrap-sass', '~> 3.2.0'
+gem 'eventmachine', '1.2.0.1'
 
 group :development do
   gem 'awesome_print'

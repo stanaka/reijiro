@@ -9,21 +9,21 @@
     clear: both;
 
     .entry {
-	font-size: 18px;
-	width: 170px;
-	color: red;
-	float: left;
+        font-size: 18px;
+        width: 170px;
+        color: red;
+        float: left;
     }
     .level {
-	font-size: 12px;
-	float: left;
-	font-weight: bold;
-	color: blue * 0.8;
+        font-size: 12px;
+        float: left;
+        font-weight: bold;
+        color: blue * 0.8;
     }
     .definition {
-	font-weight: bold;
-	margin-left: 30px;
-	float: left;
+        font-weight: bold;
+        margin-left: 30px;
+        float: left;
     }
 }
 
@@ -44,88 +44,88 @@
     padding: 0 0 0 10px;
 
     ul {
-	list-style-type: none;
-	color: #888888;
-	font-size: 14px;
-	font-weight: bold;
-	padding: 5px 0 5px 0;
-	overflow: hidden;
-	clear: both;
-	li {
-	    margin-left: -2px;
-	    border-left: 1px solid black;
-	    padding: 0px 10px 0px 10px;
-	    float: left;
-	}
+        list-style-type: none;
+        color: #888888;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 5px 0 5px 0;
+        overflow: hidden;
+        clear: both;
+        li {
+            margin-left: -2px;
+            border-left: 1px solid black;
+            padding: 0px 10px 0px 10px;
+            float: left;
+        }
     }
 
     #level {
-	font-size: 20px;
-	padding-bottom: 5px;
-	float: left;
+        font-size: 20px;
+        padding-bottom: 5px;
+        float: left;
     }
 
     #entry {
-	background-color: #dddddd;
-	font-size: 32px;
-	padding: 15px 0px 40px 5px;
-	margin-bottom: 10px;
-	clear: both;
-	border-radius: 5px;
-	#item {
-	    padding-left: 5px;
-	    text-shadow: 2px 2px 2px #888888;
-	    float: left;
-	}
+        background-color: #dddddd;
+        font-size: 32px;
+        padding: 15px 0px 40px 5px;
+        margin-bottom: 10px;
+        clear: both;
+        border-radius: 5px;
+        #item {
+            padding-left: 5px;
+            text-shadow: 2px 2px 2px #888888;
+            float: left;
+        }
     }
 
     #body {
-	display: none;
+        display: none;
 
-	#thesaurus {
-	    background-color: #eeeeee;
-	    padding: 10px 0px 20px 5px;
-	    margin-top: 10px;
-	    margin-bottom: 10px;
-	    clear: both;
-	    border-radius: 5px;
-	    .link {
-		float: right;
-		font-weight: bold;
-	    }
-	}
+        #thesaurus {
+            background-color: #eeeeee;
+            padding: 10px 0px 20px 5px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            clear: both;
+            border-radius: 5px;
+            .link {
+                float: right;
+                font-weight: bold;
+            }
+        }
 
-	#definition {
-	    padding-top: 1em;
-	}
+        #definition {
+            padding-top: 1em;
+        }
 
-	#status-digit {
-	    display: none;
-	}
+        #status-digit {
+            display: none;
+        }
 
-	#status {
-	    clear: both;
-	}
+        #status {
+            clear: both;
+        }
     }
 }
 
 .import-list {
     text-align: center;
     .level-box {
-	width: 110px;
-	height: 100px;
-	margin: 15px;
-	padding: 15px;
-	border: 1px solid black;
-	border-radius: 5px;
-	float: left;
-	.stat {
-	    font-weight: bold;
-	    margin-top: 7px;
-	}
-	.word-list {
-	    margin-top: 7px;
-	    text-align: left;
-	}
+        width: 120px;
+        height: 150px;
+        margin: 15px;
+        padding: 15px;
+        border: 1px solid black;
+        border-radius: 5px;
+        float: left;
+        .stat {
+            font-weight: bold;
+            margin-top: 7px;
+        }
+        .word-list {
+            margin-top: 7px;
+            text-align: left;
+        }
     }
 }

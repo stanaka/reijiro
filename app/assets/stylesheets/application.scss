@@ -11,8 +11,15 @@
  *= require_self
  *= require_tree .
 */
-body {
-    padding: 60px;
+
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@media (min-width: 500px) {
+    body {
+        padding: 60px;
+    }
 }
 
 .highlight {
