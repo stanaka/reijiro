@@ -31,7 +31,6 @@
           %form.navbar-form.navbar-left{role: "search", action: '/search/', method: 'get'}
             .form-group
               %input.form-control{id: 'query', placeholder: "Search", name: 'query', type: "text"}/
-              / %button.btn.btn-default{type: "submit"} Submit
 
     .container
       =render :partial => "shared/flash_messages", :locals => {:flash => flash}
