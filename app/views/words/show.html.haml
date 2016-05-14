@@ -7,7 +7,7 @@
   = render partial: "words/search_links", locals: {entry: @word.entry}
 
   - if params[:action] == "next"
-    %div.btn.btn-large#show show
+    %button.btn.btn-large#show show
 
   #body
     %div#next.next.btn.btn-primary.btn-large Check and proceed
