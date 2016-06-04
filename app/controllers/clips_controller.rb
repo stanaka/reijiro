@@ -9,6 +9,12 @@ class ClipsController < ApplicationController
     end
   end
 
+  def unknown
+    @words = Word.joins(:clip).where('status = 1').order('updated_at DESC').page(params[:page])
+    @list_title = "Clipped unknown words"
+    render 'index'
+  end
+
   def all
     @words = Word.joins(:clip).order('updated_at DESC')
     @list_title = "All clips"

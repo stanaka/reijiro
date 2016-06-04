@@ -1,8 +1,11 @@
-.item
-  .entry
-    = link_to word.entry, word_path(word)
-  .level
-    = word.level
-  .definition
-    = short_definition(word.definition)
-
+.item.container{:class => ["status-#{word.clip.status}"]}
+  %div{:class => ["row"]}
+    .entry.col-xs-8.col-md-4.row
+      %span.status.col-xs-1.col-md-1
+        = word.clip.status
+      %span.word.col-xs-6.col-md-10
+        = link_to word.entry, word_path(word)
+      %span.level.col-xs-1.col-md-1
+        = word.level
+    .definition.col-xs-12.col-md-7
+      = short_definition(word.definition)

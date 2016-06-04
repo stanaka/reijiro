@@ -3,6 +3,7 @@ Reijiro::Application.routes.draw do
   resources :clips, only: [:index, :update, :destroy]
 
   match '/clips/all' => 'clips#all', as: 'all_clips'
+  match '/clips/unkown' => 'clips#unknown', as: 'unknown_clips'
 
   match '/levels/' => 'levels#index', as: 'levels'
   match '/levels/:level' => 'levels#show', as: 'level'
