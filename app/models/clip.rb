@@ -15,7 +15,8 @@ class Clip < ActiveRecord::Base
 
   default_scope order('updated_at DESC')
   scope :done, where('status == 8')  # I'm done with the word!
-  scope :undone, where('status != 8')  # Still working on it!
+  scope :undone, where('status < 8 and status > 1')  # Still working on it!
+  scope :unknown, where('status <= 1')  # Still working on it!
   scope :level, lambda{|level| joins(:word).where('words.level == ?', level)}
 
   scope :overdue, lambda{|status| where('status = ? AND updated_at < ?', status, Time.now - INTERVAL[status])}
@@ -46,21 +47,24 @@ class Clip < ActiveRecord::Base
     def stats
       stats = {}
       (1..12).each do |l|
+        unknown = Clip.level(l).unknown.count
         undone = Clip.level(l).undone.count
         done   = Clip.level(l).done.count + Level.where(level: l).known.count
         total  = Level.where(level: l).count
         remain = total - (undone + done)
-        stats[l] = {undone: undone, done: done, total: total, remain: remain}
+        stats[l] = {unknown: unknown, undone: undone, done: done, total: total, remain: remain}
       end
 
       stats['0'] = {
-        undone: Clip.level(0).count,
+        unknown: Clip.level(0).unknown.count,
+        undone: Clip.level(0).undone.count,
         done: Clip.level(0).done.count,
         total: Clip.level(0).count,
         remain: 0
       }
 
       stats['total'] = {
+        unknown: Clip.unknown.count,
         undone: Clip.undone.count,
         done: Clip.done.count,
         ramin: Level.count - Clip.count,

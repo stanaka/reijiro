@@ -43,6 +43,7 @@
   %thead
     %tr
       %td Level
+      %td Unknown
       %td In progress
       %td Done
       %td Remain
@@ -51,6 +52,7 @@
     - (1..12).each do |l|
       %tr
         %td= "Level #{l}"
+        %td= @stats[l][:unknown]
         %td= @stats[l][:undone]
         %td= @stats[l][:done]
         %td= @stats[l][:remain]
@@ -58,12 +60,14 @@
 
     %tr
       %td= "Extra"
+      %td= @stats['0'][:unknown]
       %td= @stats['0'][:undone]
       %td= @stats['0'][:done]
       %td -
       %td -
     %tr
       %td Total
+      %td= @stats['total'][:unknown]
       %td= @stats['total'][:undone]
       %td= @stats['total'][:done]
       %td= @stats['total'][:remain]
