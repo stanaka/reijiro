@@ -1,6 +1,10 @@
 %ul
   %li
-    = link_to "Pronunciation", "http://www.macmillandictionary.com/pronunciation/american/#{entry}", target: '_blank'
+    = link_to "Pronunciation(Macmillan)", "http://www.macmillandictionary.com/pronunciation/american/#{entry}", target: '_blank'
+  %li
+    = link_to "Pronunciation(Cambridge)", "http://dictionary.cambridge.org/pronunciation/english/#{entry}", target: '_blank'
+  %li
+    = link_to "weblio", "http://ejje.weblio.jp/content/#{entry}", target: '_blank'
   %li
     = link_to "Wiktionary", "http://en.wiktionary.org/wiki/#{entry.gsub(/ /, '_')}", target: '_blank'
   %li
