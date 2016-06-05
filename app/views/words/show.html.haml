@@ -11,11 +11,13 @@
     %button.btn.btn-large#show show
 
   #body
-    %div#back.back.btn.btn-primary.btn-large Back
-    %div#stay.stay.btn.btn-primary.btn-large Stay
+    %div#back.back.btn.btn-default.btn-default Back
+    %div#stay.stay.btn.btn-default.btn-default Stay
     %div#next.next.btn.btn-primary.btn-large Check and proceed
-    = link_to "Edit", edit_word_path(@word), class: 'btn'
-    = link_to "Delete", @word, class: 'btn', data: {confirm: "Delete #{@word.entry}?"}, method: :delete
+    = link_to edit_word_path(@word), class: 'btn btn-sm' do
+      %span.glyphicon.glyphicon-pencil
+    = link_to @word, class: 'btn btn-sm', data: {confirm: "Delete #{@word.entry}?"}, method: :delete do
+      %span.glyphicon.glyphicon-trash
     %p
 
     - if @word.clip
