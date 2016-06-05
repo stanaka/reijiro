@@ -31,3 +31,8 @@ $ ->
           pointLabels: {show: true}
         },
       })
+
+  # show button
+  $('.show').click ->
+    $(this).parent(".def-button").hide()
+    $(this).parent().parent().children(".definition").show()

@@ -7,5 +7,7 @@
         = link_to word.entry, word_path(word)
       %span.level.col-xs-1.col-md-1
         = word.level
-    .definition.col-xs-12.col-md-7
+    .def-button
+      %button.btn.btn-large.show#show show
+    .definition.col-xs-12.col-md-7.hide-initial
       = short_definition(word.definition)
