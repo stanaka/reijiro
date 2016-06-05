@@ -29,6 +29,16 @@ $ ->
     if status <= 8
       $("#status#{status}").click()
 
+  $('.stay').click ->
+    status = $('#status-digit').text().trim()
+    $("#status#{status}").click()
+
+  $('.back').click ->
+    status = $('#status-digit').text().trim()
+    if status > 0
+      status--
+    $("#status#{status}").click()
+
   # show button
   $('#show').click ->
     $(this).hide()

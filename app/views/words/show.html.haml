@@ -11,6 +11,8 @@
     %button.btn.btn-large#show show
 
   #body
+    %div#back.back.btn.btn-primary.btn-large Back
+    %div#stay.stay.btn.btn-primary.btn-large Stay
     %div#next.next.btn.btn-primary.btn-large Check and proceed
     = link_to "Edit", edit_word_path(@word), class: 'btn'
     = link_to "Delete", @word, class: 'btn', data: {confirm: "Delete #{@word.entry}?"}, method: :delete
@@ -50,5 +52,7 @@
     #definition
       = raw(preprocess @word)
 
+      %div.back.btn.btn-primary.btn-large Back
+      %div.stay.btn.btn-primary.btn-large Stay
       %div.next.btn.btn-primary Check and proceed
       %a{href: "javascript:scroll(0,0)", class: 'btn'} Back to top
