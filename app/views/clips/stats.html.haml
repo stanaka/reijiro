@@ -79,4 +79,5 @@
   - @check_months.each do |date, checks|
     %tr
       %td= date.to_date
+      %td= checks.count{|c| c.oldstat == 0 && c.newstat == 1}
       %td= checks.count

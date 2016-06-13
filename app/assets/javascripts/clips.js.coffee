@@ -8,19 +8,22 @@ $ ->
 # Draw chart
   if ($('#chart').length > 0)
     $.getJSON '/stats.json', (data) ->
+      unknown = []
       undone = []
       done = []
       remain = []
       for i in [1..12]
+        unknown.push(data[i+''].unknown)
         undone.push(data[i+''].undone)
         done.push(data[i+''].done)
         remain.push(data[i+''].remain)
 
+      unknown.push(data['0'].unknown)
       undone.push(data['0'].undone)
       done.push(data['0'].done)
       remain.push(data['0'].remain)
 
-      $.jqplot('chart',  [done, undone, remain], {
+      $.jqplot('chart',  [done, undone, unknown, remain], {
         title: 'ALC 12000 Progress'
         stackSeries: true,
         seriesDefaults: {
@@ -30,6 +33,12 @@ $ ->
             },
           pointLabels: {show: true}
         },
+        axes: {
+          yaxis: {
+            min: 0,
+            max: 1000
+          }
+        }
       })
 
   # show button
