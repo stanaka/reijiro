@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20120909192507) do
   end
 
   add_index "checks", ["word_id"], :name => "index_checks_on_word_id"
+  add_index "checks", ["created_at"], :name => "index_checks_on_created_at"
 
   create_table "clips", :force => true do |t|
     t.integer  "word_id"
@@ -29,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20120909192507) do
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
   end
+  add_index "clips", ["status", "update_at"], :name => "index_clips_on_status_and_updated_at"
 
   create_table "inverts", :force => true do |t|
     t.string  "token"
