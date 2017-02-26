@@ -1,9 +1,9 @@
 class LevelsController < ApplicationController
   def index
-    @to_import = []
-    (1..12).each do |l|
-      @to_import[l] = Level.yet_to_import(l, 5)
-    end
+    #@to_import = []
+    #(1..12).each do |l|
+    #  @to_import[l] = Level.yet_to_import(l, 5)
+    #end
   end
 
   def show
