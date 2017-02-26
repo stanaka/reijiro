@@ -76,8 +76,8 @@
 %h2 Checked
 
 %table.table.table-striped.table-bordered
-  - @check_months.each do |date, checks|
+  - @check_months.each do |d|
     %tr
-      %td= date.to_date
-      %td= checks.count{|c| c.oldstat == 0 && c.newstat == 1}
-      %td= checks.count
+      %td= d.date.to_date
+      %td= d.new_count
+      %td= d.all_count
