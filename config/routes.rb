@@ -4,6 +4,7 @@ Reijiro::Application.routes.draw do
 
   match '/clips/all' => 'clips#all', as: 'all_clips'
   match '/clips/unkown' => 'clips#unknown', as: 'unknown_clips'
+  match '/clips/stagnate' => 'clips#stagnate', as: 'stagnate_clips'
 
   match '/levels/' => 'levels#index', as: 'levels'
   match '/levels/:level' => 'levels#show', as: 'level'

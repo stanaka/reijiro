@@ -5,6 +5,7 @@
 %h2= @list_title
 .all
   = link_to "» show all the clips in a single view", all_clips_path
-  = link_to "» show the unknown clips in a single view", unknown_clips_path
+  = link_to "» show unknown clips in a single view", unknown_clips_path
+  = link_to "» show stagnate clips in a single view", stagnate_clips_path
 = render @words
-= paginate @words
+/ = paginate @words
