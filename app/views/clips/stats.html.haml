@@ -76,8 +76,15 @@
 %h2 Checked
 
 %table.table.table-striped.table-bordered
-  - @check_months.each do |d|
+  - @check_months.each do |k,v|
+    %tr
+      %td= k
+      %td= v[:new_count]
+      %td= sprintf("%d (%d%%)", v[:up_count], v[:up_count] * 100 / v[:all_count])
+      %td= v[:all_count]
+  - @check_days.each do |d|
     %tr
       %td= d.date.to_date
       %td= d.new_count
+      %td= sprintf("%d (%d%%)", d.up_count, d.up_count * 100 / d.all_count)
       %td= d.all_count
