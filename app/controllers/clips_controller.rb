@@ -81,9 +81,10 @@ class ClipsController < ApplicationController
     @check_months = {}
     @check_days.each { |cd|
       m = cd.date[0,7]
-      @check_months[m] ||= { :new_count => 0, :all_count => 0, :up_count => 0 }
+      @check_months[m] ||= { :new_count => 0, :all_count => 0, :up_count => 0, :done_count => 0 }
       @check_months[m][:new_count] +=cd.new_count
       @check_months[m][:up_count] +=cd.up_count
+      @check_months[m][:done_count] +=cd.done_count
       @check_months[m][:all_count] +=cd.all_count
     }
 
