@@ -19,7 +19,7 @@ class ClipsController < ApplicationController
     @words = Word.find_by_sql("SELECT words.*
     FROM checks
     INNER JOIN words ON checks.word_id = words.id
-    WHERE (newstat = 1 or oldstat > newstat)
+    WHERE (newstat = 1 or oldstat >= newstat)
     ORDER BY checks.updated_at DESC
     LIMIT 100 OFFSET 0;
     ");
